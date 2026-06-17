@@ -1,4 +1,5 @@
-/*This solution uses Binary Search on the answer. We guess the maximum sum allowed for each subarray and count how many subarrays are needed. If more than k subarrays are required, we increase the limit; otherwise, we try a smaller limit to get the minimum possible largest sum.*/
+/*This solution uses Binary Search on the answer. We guess the maximum sum allowed for each subarray and count how many subarrays are needed. 
+If more than k subarrays are required, we increase the limit; otherwise, we try a smaller limit to get the minimum possible largest sum.*/
 
 
 class Solution {
