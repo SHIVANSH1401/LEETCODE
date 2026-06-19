@@ -1,0 +1,40 @@
+/*his solution uses Binary Search on columns instead of checking every cell.
+ For each middle column, we find the largest element and compare it with its left and right neighbors. 
+ If it's greater than both, it's a peak; otherwise, we move towards the side containing the larger neighbor.*/
+
+class Solution {
+public:
+    int maxRow(vector<vector<int>>& mat, int col) {
+        int row = 0;
+
+        for (int i = 0; i < mat.size(); i++) {
+            if (mat[i][col] > mat[row][col])
+                row = i;
+        }
+
+        return row;
+    }
+
+    vector<int> findPeakGrid(vector<vector<int>>& mat) {
+        int m = mat[0].size();
+        int low = 0, high = m - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int row = maxRow(mat, mid);
+
+            int left = (mid > 0) ? mat[row][mid - 1] : -1;
+            int right = (mid < m - 1) ? mat[row][mid + 1] : -1;
+
+            if (mat[row][mid] > left && mat[row][mid] > right)
+                return {row, mid};
+
+            if (mat[row][mid] < left)
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+
+        return {-1, -1};
+    }
+};
