@@ -1,0 +1,20 @@
+/*Two strings are isomorphic when every character in s always maps to the same character in t, 
+without two different characters mapping to one character. We store the last seen position of each character in both strings; 
+if their positions do not match at any index, the strings are not isomorphic.*/
+
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        vector<int> mapS(256, -1), mapT(256, -1);
+
+        for (int i = 0; i < s.size(); i++) {
+            if (mapS[s[i]] != mapT[t[i]])
+                return false;
+
+            mapS[s[i]] = i;
+            mapT[t[i]] = i;
+        }
+
+        return true;
+    }
+};
