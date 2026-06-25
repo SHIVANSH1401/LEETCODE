@@ -7,7 +7,9 @@ public:
     int countParts(vector<int>& nums, int maxSum) {
         int parts = 1, sum = 0;
 
-        for (int num : nums) {
+        for (int num : nums)// for (int i = 0; i < nums.length; i++) {
+    int num = nums[i];
+} {
             if (sum + num <= maxSum)
                 sum += num;
             else {
