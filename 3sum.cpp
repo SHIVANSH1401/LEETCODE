@@ -1,10 +1,6 @@
 /*This solution uses the Sorting + Two Pointer technique. After sorting the array, one element is fixed at a time, 
 and two pointers are used to efficiently find the other two numbers that make the sum equal to zero while avoiding duplicate triplets.*/
 
-/*This solution uses the Sorting + Two Pointer technique. After sorting the array, one element is fixed at a time, 
-and two pointers are used to efficiently find the other two numbers that make the sum equal to zero while avoiding duplicate triplets.*/
-
-
 class Solution {
 public:
   vector<vector<int>> threeSum(vector<int>& nums) {
