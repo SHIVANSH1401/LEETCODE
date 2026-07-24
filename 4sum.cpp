@@ -72,4 +72,8 @@ public:
 
         return ans;
     }
+<<<<<<< HEAD
 };
+=======
+};   
+>>>>>>> d242e07 (Added code for letter combination of pH No.)
